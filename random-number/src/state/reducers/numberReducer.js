@@ -11,6 +11,7 @@ export const numberReducer = (state = initialState, action) => {
         case "FETCH_NUMBER_START":
             return{
                 ...state,
+                number: 'random',
                 isFetching: true,
             }
         case "FETCH_NUMBER_SUCCESS":
@@ -19,6 +20,12 @@ export const numberReducer = (state = initialState, action) => {
                 isFetching: false,
                 numberFact: action.payload,
                 error: '',
+            }
+        case "FETCH_NUMBER_RANDOM":
+            return{
+                ...state, 
+                isFetching: true,
+                number: 'random',
             }
             default: 
                 return state;
