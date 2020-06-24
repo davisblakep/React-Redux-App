@@ -14,9 +14,13 @@ const NumberDisplay = (props) => {
 
     return(
         <div>
+        
             {props.numberFactOnProps && <p>{props.numberFactOnProps}</p>}
-            {props.isFetching && <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
-}
+            
+        
+            {props.isFetching && <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />}
+            
+
         </div>
     )
 }
