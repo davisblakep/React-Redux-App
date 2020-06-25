@@ -27,6 +27,12 @@ export const numberReducer = (state = initialState, action) => {
                 isFetching: true,
                 number: 'random',
             }
+        case "FETCH_NUMBER_FAILURE":
+            return{
+                ...state,
+                isFetching: false,
+                error: action.payload,
+            }
             default: 
                 return state;
     }

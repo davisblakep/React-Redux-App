@@ -9,6 +9,7 @@ export const fetchStatement = (number) => {
                 console.log("Axios Response", res)
                 dispatch({ type: 'FETCH_NUMBER_SUCCESS', payload: res.data})  
             })
-            .catch(err => console.log("Axios Error", err))
+            .catch(err => {console.log("Axios Error", err) 
+            dispatch({ type: 'FETCH_NUMBER_FAILURE', payload: `Error: ${err}`})})
     }   
 }

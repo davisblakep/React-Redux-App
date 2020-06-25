@@ -14,8 +14,8 @@ const NumberDisplay = (props) => {
 
     return(
         <div>
-            {props.numberFactOnProps && <p>{props.numberFactOnProps}</p>}
-            {props.isFetching && <Loader type="ThreeDots" color="#00BFFF" height={10} width={80} />}
+            {props.numberFactOnProps && !props.isFetching ? <p>{props.numberFactOnProps}</p> : <Loader type="ThreeDots" color="#00BFFF" height={20} width={80} />}
+            {props.errorOnProps && <p>{props.errorOnProps}</p>}
         </div>
     )
 }
@@ -26,6 +26,7 @@ const mapStateToProps = state => {
         numberFactOnProps: state.numberReducer.numberFact,
         isFetching: state.numberReducer.isFetching,
         numberOnProps: state.numberReducer.number,
+        errorOnProps: state.numberReducer.error
     }
 }
 
